@@ -137,7 +137,7 @@ The table below shows the parameters in HTTP Response **Body**:
 
 #### Response Sample
     
-        StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
+    StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
     {
       Pragma: no-cache
       X-SourceFiles: =?UTF-8?B?RDpcZ2l0XENoYXJpdHlcSUNQU2VydmljZVxCYWJhUGF6UHJvamVjdFxhcGlcb3RwXGNvbW1pdA==?=
