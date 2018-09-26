@@ -1,3 +1,4 @@
+
 # IMI OTP API
 
 This document displays public specifications, samples and documentation for sending OTP (One Time Password) to end-users.
@@ -12,7 +13,7 @@ This service will send a four-digit code to end-user.
 ### Start API Request
 
 Method: POST
-RequestUri: https://icp.sdp.fanap.plus/
+RequestUri: https://icp.sdp.fanap.plus/api/otp/start
 
 The table below shows the parameters in request **Header**:
 
@@ -34,7 +35,7 @@ The table below shows the parameters in request **Body**:
 
 #### Request Sample
 
-    Method: POST, RequestUri: 'https://icp.sdp.fanap.plus/', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+    Method: POST, RequestUri: 'https://icp.sdp.fanap.plus/api/otp/start', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
     {
       Content-Type: application/json; charset=utf-8
       TenantId: your.tenant.id
@@ -86,7 +87,7 @@ When this service is called, the end-user either gets subscribed to the subscrip
 ### Commit API Request
 
 Method: POST
-RequestUri: https://icp.sdp.fanap.plus/
+RequestUri: https://icp.sdp.fanap.plus/api/otp/commit
 
 The table below shows the parameters in request **Header**:
 
@@ -109,7 +110,7 @@ The table below shows the parameters in request **Body**:
 
 #### Request Sample
 
-    Method: POST, RequestUri: 'https://icp.sdp.fanap.plus/', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
+    Method: POST, RequestUri: 'https://icp.sdp.fanap.plus/api/otp/commit', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
     {
       Content-Type: application/json; charset=utf-8
       TenantId: your.tenant.id
