@@ -196,6 +196,6 @@ Body:
         {
             "Signature": Sign("your-app-id#your.tenant.id#2018-09-24T12:01:27.938Z", yourPrivateKey),
             "ServiceKey": "YourServiceKey",
-            "Date":"2018-09-24T12:01:27.938Z"
+            "Date":"2018-09-24T12:01:27.938Z",
             //Additional fields go here
         }
