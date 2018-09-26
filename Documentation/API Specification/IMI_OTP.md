@@ -29,7 +29,7 @@ The table below shows the parameters in request **Body**:
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|2018-09-24T07:41:32.443Z|
-|Phone|End-user's phone number |09121111111           |
+|PhoneNumber|End-user's phone number |09121111111           |
 |ServiceKey|The service identifier code provided by FanapPlus to CP |e61e19e1070e4d3293cf3f7e5ba22267|
 |Signature|Signed message  |"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlPHi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pcaj8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="|
 
@@ -43,7 +43,7 @@ The table below shows the parameters in request **Body**:
     }
     {
     	"Date":"2018-09-24T07:41:32.443Z",
-    	"Phone":"09120000000",
+    	"PhoneNumber":"09120000000",
     	"ServiceKey":"63b01900e9c447e4930ce8ab0969e6f3",
     	"Signature":"OOfREvnE9V720y5bxzw1QIJwf6NgRcbur334iZeRC6fDMKMIxZAWPi/JfUQbWIFT/JAkNme5BnFtKlWXPQhjO4o64CpaooN0MqkaLBHhhiCWL7G843Z8uVtEnE/zNjHDpJNKMvXX0GNY9yXyZcnKV0GganJN48Rzk79GXGogrCvCF+vSgN3bo/dHwakSTASiSXALYIU3SyG0y9o7QpGri+SXYZT7b38kGcNcI4AA0ScDHKApVtmz6VbNe5thULq+xaKSMR68okiyyrt/8ghLYH0zi9vdJ0F/K/FAEaetibLFDUO8iTQJ2VBuMVDnkd9nbkjN+AtIXiGi//jKowrslQ=="
     }
