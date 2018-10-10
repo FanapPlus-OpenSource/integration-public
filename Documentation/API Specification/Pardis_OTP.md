@@ -1,4 +1,5 @@
 
+  
 # Pardis OTP API
 
 This document displays public specifications, samples and documentation for sending OTP (One Time Password) to end-users.
@@ -174,7 +175,7 @@ In order to generate RSA keys, these steps should be followed:
  4. Type **Appson.Security.KeyGenerator.Console.exe** and press **Enter**.
  5. Choose the directory to store the set of keys.
  6. **Private Key** and **Public Key** files will be generated.
- 7. Provide your **Public Key** in *xml* format to FanapPlus.
+ 7. Provide your **Public Key** in *xml* format to FanapPlus in the form of a [ticket](https://ticket.fanap.plus/portal).
  
 
 ## Which fields to sign
@@ -202,4 +203,3 @@ Body:
             "Date":"2018-09-24T12:01:27.938Z",
             //Additional fields go here
         }
-
