@@ -1,5 +1,5 @@
-![FanapPlus Logo](https://user-images.githubusercontent.com/32090767/46914622-12699000-cfad-11e8-8709-ab44959bb3c2.png)
-  
+![FanapPlus Logo](https://user-images.githubusercontent.com/32090767/46914641-2614f680-cfad-11e8-8607-74dec37b5f5d.png)
+
 # Pardis OTP API
 
 This document displays public specifications, samples and documentation for sending OTP (One Time Password) to end-users.
