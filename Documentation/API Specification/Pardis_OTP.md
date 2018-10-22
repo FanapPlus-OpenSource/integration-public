@@ -22,16 +22,16 @@ The table below shows the parameters in request **Header**:
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |Content-Type|Type of the data which is being sent.|application/json; charset=utf-8           |
-|TenantId    |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal).  |2E06A1FF-09F0-4EBE-ACE5-ASD98W4ER98F|
-|AppId       |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal).  |345J6JSD-GJ0S-D82N-SDF8-GV50S3898345
+|TenantId    |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal).  |your.tenant.id|
+|AppId       |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal).  |your-app-id
 
 The table below shows the parameters in request **Body**:
 
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|2018-09-24T07:41:32.443Z|
-|PhoneNumber|End-user's phone number |09121111111           |
-|ServiceKey|The service identifier code provided by FanapPlus to CP |e61e19e1070e4d3293cf3f7e5ba22267|
+|PhoneNumber|End-user's phone number |09120000000           |
+|ServiceKey|The service identifier code provided by FanapPlus to CP |63b01900e9c447e4930ce8ab0969e6f3|
 |Signature|Signed message  |"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlPHi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pcaj8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="|
 
 #### Request Sample
@@ -40,7 +40,7 @@ The table below shows the parameters in request **Body**:
     {
       Content-Type: application/json; charset=utf-8
       TenantId: your.tenant.id
-      AppId: 5812d7c8bb9c4b798b23316749ef19eb
+      AppId: your-app-id
     }
     {
     	"Date":"2018-09-24T07:41:32.443Z",
@@ -57,7 +57,7 @@ The table below shows the parameters in HTTP Response **Body**:
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |Response|Indicates the state of the request. If the state is zero, the response is successful. Any other value represents an operator error.|0          |
-|correlationId|The request identifier code|f74053ab0a62429c8b636619d8a4badc|
+|correlationId|The request identifier code|973358ae413e4379881476cbd3486aa0|
 |success|The overall state of the request|true/false|
 
 
@@ -94,18 +94,18 @@ The table below shows the parameters in request **Header**:
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |Content-Type|Type of the data which is being sent.|application/json; charset=utf-8           |
-|TenantId    |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal). |2E06A1FF-09F0-4EBE-ACE5-ASD98W4ER98F|
-|AppId       |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal). |345J6JSD-GJ0S-D82N-SDF8-GV50S3898345
+|TenantId    |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal). |your.tenant.id|
+|AppId       |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal). |your-app-id
 
 The table below shows the parameters in request **Body**:
 
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|2018-09-24T07:43:23.045Z|
-|PhoneNumber|End-user's phone number |09121111111           |
+|PhoneNumber|End-user's phone number |09120000000           |
 |CorrelationId|The OTP identifier code, this code should acquired in response of Start API.|6975be5c5a0541779af4d8d465e57b83          |
-|Token|OTP code entered by user|"8807"|
-|ServiceKey|The service identifier code provided by FanapPlus to CP |e61e19e1070e4d3293cf3f7e5ba22267|
+|Token|OTP code entered by user|"3007"|
+|ServiceKey|The service identifier code provided by FanapPlus to CP |63b01900e9c447e4930ce8ab0969e6f3|
 |Signature|Signed message  |"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="
 
 #### Request Sample
@@ -117,7 +117,7 @@ The table below shows the parameters in request **Body**:
       AppId: your-app-id
     }
     {
-    "ServiceKey":"d5506ceec07a414884bebd7cf0812cbc",
+    "ServiceKey":"63b01900e9c447e4930ce8ab0969e6f3",
     "PhoneNumber":"9120000000",
     "CorrelationId":"973358ae413e4379881476cbd3486aa0",
     "Token":"3007",
