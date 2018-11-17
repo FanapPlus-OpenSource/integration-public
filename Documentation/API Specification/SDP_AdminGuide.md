@@ -7,12 +7,6 @@
 1. [Introduction](#introduction)
 2. [Login](#login)
 3. [Reporting Dashboard](#reporting-dashboard)
-4. [Campaign Management](#campaign-management)
-5. [How can I authenticate a user using phone number?](#how-can-i-authenticate-a-user-using-phone-number)
-6. [How would I know that the JWT token is sent by you?](#how-would-i-know-that-the-jwt-token-is-sent-by-you)
-7. [How can I verify the JWT token with public key?](#how-can-i-verify-the-jwt-token-with-public-key)
-8. [What is inside the token?](#what-is-inside-the-token)
-9. [How can I see inside the token?](#how-can-i-see-inside-the-token)
  ## Introduction
 
 Fanap Plus Service Delivery Platform is platform that presents service delivery architecture to businesses who are utilizing telecommunication services, connecting them to Mobile Network Operators. However this explanation is specific to Fanap Plus and there is no standard definition of SDP in industry and different players define its characteristics in different ways. Yet the main feature of SDP is that it requires a complete integration of IT capabilities and the creation of services that cross technology and network boundaries. 
