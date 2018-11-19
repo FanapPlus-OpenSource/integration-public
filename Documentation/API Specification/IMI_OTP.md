@@ -1,3 +1,4 @@
+
 ![FanapPlus Logo](https://user-images.githubusercontent.com/32090767/46914641-2614f680-cfad-11e8-8607-74dec37b5f5d.png)
 
 # IMI OTP API
@@ -173,7 +174,7 @@ In order to generate RSA keys, these steps should be followed:
  4. Type **Appson.Security.KeyGenerator.Console.exe** and press **Enter**.
  5. Choose the directory to store the set of keys.
  6. **Private Key** and **Public Key** files will be generated.
- 7. Provide your **Public Key** in *xml* format to FanapPlus.
+ 7. Provide your **Public Key** in *xml* format to FanapPlus via a [ticket](https://ticket.fanap.plus/portal).
  
 
 ## Which fields to sign
