@@ -24,7 +24,7 @@ The table below shows the parameters in request **Header**:
 |----------------|-------------------------------|-----------------------------|
 |SDP-Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|e.g. 2019-01-26T11:00:42.364Z|
 |SDP-ProductId|This ID should be acquired from [SDP](https://sdp.fanap.plus/), List of Products.  |e.g. 11035|
-|SDP-Signature|Signed message <br> [Which fields to sign?](##which-fields-to-sign?)
+|SDP-Signature|Signed message <br> [Which fields to sign?](#which-fields-to-sign?)
 2. [Login](#login)|"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="
 |Content-Type|Type of the data which is being sent|application/json|
 
