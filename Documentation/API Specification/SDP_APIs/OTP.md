@@ -34,7 +34,6 @@ SDP-Signature: Sign(SDP-ProductId#SDP-Date, YourPrivateKey)
 ---
 
 The table below shows the parameters in request **Body**:
-
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |phone|End-user's phone number |e.g. 9120000000|
