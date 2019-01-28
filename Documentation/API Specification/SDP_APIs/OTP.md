@@ -1,5 +1,6 @@
 
 
+
 ![FanapPlus Logo](https://user-images.githubusercontent.com/32090767/46914641-2614f680-cfad-11e8-8607-74dec37b5f5d.png)
 
 # OTP API
@@ -35,6 +36,7 @@ SDP-Signature: Sign(SDP-ProductId#SDP-Date, YourPrivateKey)
 ---
 
 The table below shows the parameters in request **Body**:
+
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |phone|End-user's phone number |e.g. 9120000000|
@@ -57,10 +59,8 @@ Body:
 	"productId":11035
 }
 ```
----
 **NOTE**: The `otpId` field will be used in  [Commit](#commit-api) step.
 
----
 
 ### Start API Response
 
