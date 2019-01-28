@@ -40,6 +40,7 @@ The table below shows the parameters in request **Body**:
 |phone|End-user's phone number |e.g. 9120000000|
 |productId|This ID should be acquired from [SDP](https://sdp.fanap.plus/), List of Products.  |e.g. 11035|
 
+
 #### Request Sample
 ```
 Method: POST,
