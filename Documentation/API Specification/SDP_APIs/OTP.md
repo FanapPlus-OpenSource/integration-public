@@ -24,10 +24,14 @@ The table below shows the parameters in request **Header**:
 |----------------|-------------------------------|-----------------------------|
 |SDP-Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|e.g. 2019-01-26T11:00:42.364Z|
 |SDP-ProductId|This ID should be acquired from [SDP](https://sdp.fanap.plus/), List of Products.  |e.g. 11035|
-|SDP-Signature|Signed message <br> [Which fields to sign?](#which-fields-to-sign?)
-2. [Login](#login)|"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="
+|SDP-Signature|Signed message* <br> [Which fields to sign?](#which-fields-to-sign)|"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="
 |Content-Type|Type of the data which is being sent|application/json|
-
+---
+**NOTE** : `SDP-Signature` header is calculated using `SDP-ProductId` and `SDP-Date` headers:
+```
+SDP-Signature: Sign(SDP-ProductId#SDP-Date, YourPrivateKey)
+```
+---
 
 The table below shows the parameters in request **Body**:
 
@@ -42,50 +46,37 @@ Method: POST,
 RequestUri: 'https://api.sdp.fanap.plus/api/otp/start'
 Headers:
 {
-	Content-Type: application/json; charset=utf-8
+	SDP-Date: 2019-01-26T11:00:42.364Z
+    SDP-ProductId: 11035
+    SDP-Signature: YourSignature
+    Content-Type: application/json; charset=utf-8
 }
 Body:
 {
-	"phone": "9120000000",
-	"productId": 11035,
-	"dateTime": "2018-12-31T08:24:08.886Z",
-	"signature": Sign($"{productId}#{dateTime}", PrivateKey)
+	"phone":"9120000000",
+	"productId":11035
 }
-    ```
+```
+---
+**NOTE**: The `otpId` field will be used in  [Commit](#commit-api) step.
 
-    
+---
 ### Start API Response
 
 The table below shows the parameters in HTTP Response **Body**:
-
-
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |OtpId|The OTP identifier code, this code should be kept for OTP confirmation.|6975be5c5a0541779af4d8d465e57b83          |
-|RequestId|The request identifier code|f74053ab0a62429c8b636619d8a4badc|
 
-
-
-#### Response Sample
-    
-    StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
-    {
-      Pragma: no-cache
-      X-SourceFiles: =?UTF-8?B?RDpcZ2l0XENoYXJpdHlcSUNQU2VydmljZVxCYWJhUGF6UHJvamVjdFxhcGlcb3RwXHN0YXJ0?=
-      Cache-Control: no-cache
-      Date: Mon, 24 Sep 2018 07:41:42 GMT
-      Server: Microsoft-IIS/10.0
-      X-AspNet-Version: 4.0.30319
-      X-Powered-By: ASP.NET
-      Content-Length: 91
-      Content-Type: application/json; charset=utf-8
-      Expires: -1
-    }
-    {
-    "OtpId":"5f8db2e9e3c94532b4648c16cd52be37",
-    "RequestId":"370b5cae1d614906bb9dd394a5bb9559"
+In case of successful response, you will receive following response body:
+```
+{
+	"success":true,
+	"result": {
+		"otpId": "f72008d21b0a498aadf35482a319b81d"
 	}
-
+}
+```
 
 ## Commit API
 When this service is called, the end-user either gets subscribed to the subscription-based service or makes a purchase for On-Demand based services.
@@ -93,43 +84,45 @@ When this service is called, the end-user either gets subscribed to the subscrip
 ### Commit API Request
 
 Method: POST
-RequestUri: https://icp.sdp.fanap.plus/api/otp/commit
+RequestUri: https://api.sdp.fanap.plus/api/otp/commit
 
 The table below shows the parameters in request **Header**:
-
-
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
-|Content-Type|Type of the data which is being sent.|application/json; charset=utf-8           |
-|TenantId    |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal). |2E06A1FF-09F0-4EBE-ACE5-ASD98W4ER98F|
-|AppId       |This ID should be acquired via a [ticket](https://ticket.fanap.plus/portal). |345J6JSD-GJ0S-D82N-SDF8-GV50S3898345
+|SDP-Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|e.g. 2019-01-26T11:00:42.364Z|
+|SDP-ProductId|This ID should be acquired from [SDP](https://sdp.fanap.plus/), List of Products.  |e.g. 11035|
+|SDP-Signature|Signed message* <br> [Which fields to sign?](#which-fields-to-sign)|"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="
+|Content-Type|Type of the data which is being sent|application/json|
+---
+**NOTE** : `SDP-Signature` header is calculated using `SDP-ProductId` and `SDP-Date` headers:
+```
+SDP-Signature: Sign(SDP-ProductId#SDP-Date, YourPrivateKey)
+```
+---
 
 The table below shows the parameters in request **Body**:
-
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
-|Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|2018-09-24T07:43:23.045Z|
-|OtpId|The OTP identifier code, this code should acquired in response of Start API.|6975be5c5a0541779af4d8d465e57b83          |
-|Pin|OTP code entered by user|"8807"|
-|ServiceKey|The service identifier code provided by FanapPlus to CP |e61e19e1070e4d3293cf3f7e5ba22267|
-|Signature|Signed message  |"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="
+|OtpId|The OTP identifier code, this code should be kept for OTP confirmation.|6975be5c5a0541779af4d8d465e57b83          |
+|Pin|OTP code entered by user|8807|
 
 #### Request Sample
-
-    Method: POST, RequestUri: 'https://icp.sdp.fanap.plus/api/otp/commit', Version: 1.1, Content: System.Net.Http.StringContent, Headers:
-    {
-      Content-Type: application/json; charset=utf-8
-      TenantId: your.tenant.id
-      AppId: 5812d7c8bb9c4b798b23316749ef19eb
-    }
-    {
-    "Date":"2018-09-24T07:43:23.045Z",
-    "OtpId":"5f8db2e9e3c94532b4648c16cd52be37",
-    "Pin":"8077",
-    "ServiceKey":"63b01900e9c447e4930ce8ab0969e6f3",
-    "Signature":"J8/rSZlOssC/o34sEJdKlVjiieLhfS4T2hcmqHUqPyXLSso39jihFzLysWhHuNs1BjalDnak4ocNgBSckMR3/tqCTrmqStmA0impWe65cHJdGC4uV8/YuOxNGlWOpRad149j0JcARDWyISW6bZb1Abh8ZGOnf9SYUzWrrwQ3v4JZzoUL+pLjHm1XvYyHokw3vyU1FV+NPQVvhH6xTvoiU15GHCkPZ3aGkkso6wa/nURUOqy7s0esVwXKBTukO9TCut43s1h6qgIgeBniL82VUa6umyfe3b58sIs3E+6rdJnKH07rZbDmwGfJgdk8m5dc8pEpGa2aY03vCiCXR2OWWQ=="
-    }
-    
+```
+Method: POST,
+RequestUri: 'https://api.sdp.fanap.plus/api/otp/commit'
+Headers:
+{
+	SDP-Date: 2019-01-26T11:00:42.364Z
+    SDP-ProductId: 11035
+    SDP-Signature: YourSignature
+    Content-Type: application/json; charset=utf-8
+}
+Body:
+{
+	"otpId":"f72008d21b0a498aadf35482a319b81d",
+	"pin":"2511"
+}
+```
 ### Commit API Response
 
 The table below shows the parameters in HTTP Response **Body**:
@@ -137,29 +130,17 @@ The table below shows the parameters in HTTP Response **Body**:
 
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
-|RequestId|The request identifier code|f74053ab0a62429c8b636619d8a4badc|
+|refId|The reference identifier code. This code can be used to identify your HTTP request.|2602fcd79bb2412ab3f9cf57c17a43a3|
 
-
-
-#### Response Sample
-    
-    StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.StreamContent, Headers:
-    {
-      Pragma: no-cache
-      X-SourceFiles: =?UTF-8?B?RDpcZ2l0XENoYXJpdHlcSUNQU2VydmljZVxCYWJhUGF6UHJvamVjdFxhcGlcb3RwXGNvbW1pdA==?=
-      Cache-Control: no-cache
-      Date: Mon, 24 Sep 2018 07:43:36 GMT
-      Server: Microsoft-IIS/10.0
-      X-AspNet-Version: 4.0.30319
-      X-Powered-By: ASP.NET
-      Content-Length: 48
-      Content-Type: application/json; charset=utf-8
-      Expires: -1
-    }
-    {
-    "RequestId":"e4f8a523862d4b1a912be2a71ae3ed38"
-    }
-
+In case of successful response, you will receive following response body:
+```
+{
+	"success":true,
+	"result": {
+		"refId": "2602fcd79bb2412ab3f9cf57c17a43a3"
+	}
+}
+```
 # Digital Signature
 
 All requests sent to FanapPlus must be first signed by the developer. The signing process ensures that the service call is made by the developer herself. For further information refer to these links:
@@ -181,7 +162,7 @@ In order to generate RSA keys, these steps should be followed:
  7. Provide your **Public Key** in *xml* format to FanapPlus via a [ticket](https://ticket.fanap.plus/portal).
  
 
-## Which fields to sign?
+## Which fields to sign
 
 In order to call any of FanapPlus's OTP APIs, you must sign as the following combination and store it in the `Signature`field of HTTP request body:
 
