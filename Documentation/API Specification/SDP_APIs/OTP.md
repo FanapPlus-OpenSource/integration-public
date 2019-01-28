@@ -80,6 +80,7 @@ In case of successful response, you will receive following response body:
 }
 ```
 
+
 ## Commit API
 When this service is called, the end-user either gets subscribed to the subscription-based service or makes a purchase for On-Demand based services.
 
@@ -89,6 +90,7 @@ Method: POST
 RequestUri: https://api.sdp.fanap.plus/api/otp/commit
 
 The table below shows the parameters in request **Header**:
+
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |SDP-Date|Date of request in UTC, [Iso 8601](https://en.wikipedia.org/wiki/ISO_8601) format <br> (`"yyyy-MM-ddTHH:mm:ss.fffZ"`)|e.g. 2019-01-26T11:00:42.364Z|
