@@ -61,9 +61,11 @@ Body:
 **NOTE**: The `otpId` field will be used in  [Commit](#commit-api) step.
 
 ---
+
 ### Start API Response
 
 The table below shows the parameters in HTTP Response **Body**:
+
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |OtpId|The OTP identifier code, this code should be kept for OTP confirmation.|6975be5c5a0541779af4d8d465e57b83          |
