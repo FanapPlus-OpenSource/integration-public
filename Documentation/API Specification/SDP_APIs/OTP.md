@@ -104,7 +104,9 @@ The table below shows the parameters in request **Header**:
 SDP-Signature: Sign(SDP-ProductId#SDP-Date, YourPrivateKey)
 ```
 ---
-The table below shows the parameters in request **Body** :
+
+The table below shows the parameters in request **Body**:
+
 |Name            |Description                    |Example                       |
 |----------------|-------------------------------|-----------------------------|
 |OtpId|The OTP identifier code, this code should be kept for OTP confirmation.|6975be5c5a0541779af4d8d465e57b83          |
