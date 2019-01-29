@@ -98,6 +98,7 @@ The table below shows the parameters in request **Header**:
 |SDP-Signature|Signed message* <br> [Which fields to sign?](#which-fields-to-sign)|"IMGFCgXPNIibooGTI6WhRxVcdc9sGBmZc05bAwyqYEib9<br>AOBVDHC0tvpE70MQz4Y+tpJiK2/JUksK86hxq2GBbfVTlP<br>Hi2YdaB7FuyHoRR5Cenp/8gA14+5qWTWA+uJBm8/0Rj8E/Pca<br>j8wV/wjkwVgEOMFfi/XvklgzAXwUXKU="|
 |Content-Type|Type of the data which is being sent|application/json|
 
+---
 **NOTE** : `SDP-Signature` header is calculated using `SDP-ProductId` and `SDP-Date` headers:
 ```
 SDP-Signature: Sign(SDP-ProductId#SDP-Date, YourPrivateKey)
