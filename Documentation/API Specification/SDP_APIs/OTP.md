@@ -1,6 +1,7 @@
 
 
 
+
 ![FanapPlus Logo](https://user-images.githubusercontent.com/32090767/46914641-2614f680-cfad-11e8-8607-74dec37b5f5d.png)
 
 # OTP API
@@ -79,7 +80,6 @@ In case of successful response, you will receive following response body:
 	}
 }
 ```
-
 
 ## Commit API
 When this service is called, the end-user either gets subscribed to the subscription-based service or makes a purchase for On-Demand based services.
