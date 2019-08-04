@@ -159,7 +159,7 @@ https://www.docusign.com/how-it-works/electronic-signature/digital-signature/dig
 In order to generate RSA keys, these steps should be followed:
 
  1. Download KeyGenerators.rar file from this link.
-	[https://github.com/appson/payment-public/blob/master/v1.0.0/RSA%20Generator/src/Appson.Payment.KeyGenerator/bin/KeyGenerators.rar](https://github.com/appson/payment-public/blob/master/v1.0.0/RSA%20Generator/src/Appson.Payment.KeyGenerator/bin/KeyGenerators.rar)
+ https://github.com/appson/integration-public/blob/master/Documentation/API%20Specification/KeyGenerators.rar
  2. Extract file contents to the desired location.
  3. Open **Command Prompt** and change the directory to where you have stored the rar file contents.
  4. Type **Appson.Security.KeyGenerator.Console.exe** and press **Enter**.
