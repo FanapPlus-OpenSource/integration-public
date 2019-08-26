@@ -157,11 +157,32 @@ The table below shows the parameters in HTTP Response **Body**:
 
 In case of successful response, you will receive following response body:
 ```
-{
-	"success":true,
-	"result": {
-		"refId": "2602fcd79bb2412ab3f9cf57c17a43a3"
-	}
+{  
+   "code":0,
+   "message":"calling ghasedak is successful",
+   "ghasedakResult":{  
+      "status":"OperationCompleted",
+      "code":"200",
+      "description":"GH-200 "
+   },
+   "result":{  
+      "refId":"15b2b6de64304e5480bf8925735c5fbe"
+   }
+}
+```
+In case of Unsuccessful response, you will receive following response body:
+```
+{  
+  "code":1008,
+   "message":"Error while calling ghasedak service",
+   "ghasedakResult":{  
+      "status":"OperationFailed",
+      "code":"412",
+      "description":"GH-412 Verification code does not match"
+   },
+   "result":{  
+      "refId":"797f16c7e00c49dcbbe3bb6e5f160417"
+   }
 }
 ```
 # Digital Signature
