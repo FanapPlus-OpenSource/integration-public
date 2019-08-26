@@ -73,11 +73,32 @@ The table below shows the parameters in HTTP Response **Body**:
 
 In case of successful response, you will receive following response body:
 ```
-{
-	"success":true,
-	"result": {
-		"otpId": "f72008d21b0a498aadf35482a319b81d"
-	}
+{  
+   "code":0,
+   "message":"calling ghasedak is successful",
+   "ghasedakResult":{  
+      "status":null,
+      "code":null,
+      "description":null
+   },
+   "result":{  
+      "otpId":"f72008d21b0a498aadf35482a319b81d"
+   }
+}
+```
+In case of Unsuccessful response, you will receive following response body:
+```
+{  
+  "code":1008,
+   "message":"Error while calling ghasedak service",
+   "ghasedakResult":{  
+      "status":"OperationFailed",
+      "code":"412",
+      "description":"GH-412 Verification code does not match"
+   },
+   "result":{  
+      "refId":"797f16c7e00c49dcbbe3bb6e5f160417"
+   }
 }
 ```
 
