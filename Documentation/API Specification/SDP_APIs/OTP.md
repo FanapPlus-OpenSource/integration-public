@@ -76,11 +76,7 @@ In case of successful response, you will receive following response body:
 {  
    "code":0,
    "message":"calling ghasedak is successful",
-   "ghasedakResult":{  
-      "status":null,
-      "code":null,
-      "description":null
-   },
+   "ghasedakResult":null,
    "result":{  
       "otpId":"f72008d21b0a498aadf35482a319b81d"
    }
