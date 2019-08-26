@@ -18,7 +18,7 @@ This service will send a four-digit code to end-user.
 ### Start API Request
 
 Method: POST
-RequestUri:  https://api.sdp.fanap.plus/api/otp/start
+RequestUri:  https://api.sdp.fanap.plus/api/v1/otp/start
 
 The table below shows the parameters in request **Header**:
 
@@ -87,7 +87,7 @@ When this service is called, the end-user either gets subscribed to the subscrip
 ### Commit API Request
 
 Method: POST
-RequestUri: https://api.sdp.fanap.plus/api/otp/commit
+RequestUri: https://api.sdp.fanap.plus/api/v1/otp/commit
 
 The table below shows the parameters in request **Header**:
 
@@ -115,7 +115,7 @@ The table below shows the parameters in request **Body**:
 #### Request Sample
 ```
 Method: POST,
-RequestUri: 'https://api.sdp.fanap.plus/api/otp/commit'
+RequestUri: 'https://api.sdp.fanap.plus/api/v1/otp/commit'
 Headers:
 {
 	SDP-Date: 2019-01-26T11:00:42.364Z
