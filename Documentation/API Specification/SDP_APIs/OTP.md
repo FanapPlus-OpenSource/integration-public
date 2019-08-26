@@ -46,7 +46,7 @@ The table below shows the parameters in request **Body**:
 #### Request Sample
 ```
 Method: POST,
-RequestUri: 'https://api.sdp.fanap.plus/api/otp/start'
+RequestUri: 'https://api.sdp.fanap.plus/api/v1/otp/start'
 Headers:
 {
 	SDP-Date: 2019-01-26T11:00:42.364Z
